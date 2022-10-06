@@ -1,0 +1,25 @@
+* c:\users\hp\desktop\dc_to_dc_converter\dc_to_dc_converter.cir
+
+.include NMOS-180nm.lib
+.include schottky.lib
+d1 net-_c1-pad2_ net-_d1-pad2_ 1N5819
+l1  net-_d1-pad2_ out 10m
+r1  out net-_c1-pad2_ 10
+c1  out net-_c1-pad2_ 220u
+v2  pulse gnd pulse(0 1 0 0 0 5u 10u)
+* u2  out plot_v1
+* u1  ? plot_v1
+v1 in gnd  dc 5
+m1 net-_d1-pad2_ pulse in net-_m1-pad4_ CMOSN W=100u L=100u M=1
+v3 net-_m1-pad4_ gnd  dc 1.8
+.tran 0.01e-06 40e-06 0e-00
+
+* Control Statements 
+.control
+run
+print allv > plot_data_v.txt
+print alli > plot_data_i.txt
+plot v(out)
+plot v(?)
+.endc
+.end

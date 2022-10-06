@@ -1,0 +1,20 @@
+* C:\Users\HP\Desktop\DC_To_DC_Converter\DC_To_DC_Converter.cir
+
+* EESchema Netlist Version 1.1 (Spice format) creation date: 10/06/22 23:33:25
+
+* To exclude a component from the Spice Netlist add [Spice_Netlist_Enabled] user FIELD set to: N
+* To reorder the component spice node sequence add [Spice_Node_Sequence] user FIELD and define sequence: 2,1,0
+
+* Sheet Name: /
+D1  Net-_C1-Pad2_ Net-_D1-Pad2_ eSim_Diode		
+L1  Net-_D1-Pad2_ out 10m		
+R1  out Net-_C1-Pad2_ 10		
+C1  out Net-_C1-Pad2_ 220u		
+v2  pulse GND pulse		
+U2  out plot_v1		
+U1  ? plot_v1		
+v1  In GND DC		
+M1  Net-_D1-Pad2_ pulse In Net-_M1-Pad4_ eSim_MOS_P		
+v3  Net-_M1-Pad4_ GND DC		
+
+.end
